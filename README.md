@@ -20,24 +20,26 @@ Toggle all tabs with `/panel`.
 
 ## Install
 
-1. Clone into your Claude Code mods folder:
+Type this at the Claude Code prompt in a terminal session:
 
-   ```powershell
-   git clone https://github.com/egeurcu/claude-code-panel.git $HOME\.claude\mods\panel
-   ```
+```
+/plugin install panel --marketplace egeurcu/claude-code-panel
+```
 
-2. Add the following to `~/.claude/settings.json`:
+Answer `y` to add the marketplace, then pick the user scope. The panel opens on the right when the terminal is wide enough. `/panel` hides and shows it.
 
-   ```json
-   {
-     "tui": "fullscreen",
-     "env": { "CLAUDE_CODE_PLUGIN_DIRS": "C:\\Users\\<you>\\.claude\\mods\\panel" }
-   }
-   ```
-
-3. Start `claude`. The panel opens on the right; `/panel` hides and shows it.
+The right-docked layout needs the fullscreen TUI, so set `"tui": "fullscreen"` in `~/.claude/settings.json` (or run `/tui fullscreen`).
 
 ## Develop
+
+Clone the repository, then load it from the folder instead of installing it:
+
+```powershell
+git clone https://github.com/egeurcu/claude-code-panel.git $HOME\.claude\mods\panel
+claude --plugin-dir $HOME\.claude\mods\panel
+```
+
+To load it in every session, set `env.CLAUDE_CODE_PLUGIN_DIRS` to that folder in `~/.claude/settings.json`. Don't combine this with the installed plugin, or it loads twice.
 
 ```powershell
 claude plugin test .
@@ -56,4 +58,4 @@ Ditto is a Pokémon character owned by Nintendo / Game Freak. The sprite here is
 
 Claude Code için sağa yerleşen canlı bir panel. **Panel**, **Code**, **System** ve **Sessions** sekmelerinden oluşur ve `/panel` ile açılıp kapanır. Arayüz dili System sekmesinin en altından değiştirilir.
 
-Kurulum için yukarıdaki "Install" adımlarını izle. Sessions sekmesinde `×` ile ya da `🧹 Başlıksızları sil` ile silinen oturumlar Geri Dönüşüm Kutusu'na taşınır ve oradan geri alınabilir.
+Kurulum: Claude Code'da `/plugin install panel --marketplace egeurcu/claude-code-panel` yaz, `y` ile marketplace'i ekle, user kapsamını seç. Sessions sekmesinde `×` ile ya da `🧹 Başlıksızları sil` ile silinen oturumlar Geri Dönüşüm Kutusu'na taşınır ve oradan geri alınabilir.

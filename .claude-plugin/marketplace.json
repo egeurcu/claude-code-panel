@@ -1,0 +1,6 @@
+{
+  "name": "claude-code-panel",
+  "description": "Right-docked live panel for Claude Code",
+  "owner": { "name": "egeurcu" },
+  "plugins": [{ "name": "panel", "source": "./" }]
+}
