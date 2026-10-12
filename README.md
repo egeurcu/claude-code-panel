@@ -23,7 +23,7 @@ Toggle all tabs with `/panel`.
 1. Clone into your Claude Code mods folder:
 
    ```powershell
-   git clone https://github.com/egeurcu/claude-panel.git $HOME\.claude\mods\panel
+   git clone https://github.com/egeurcu/claude-code-panel.git $HOME\.claude\mods\panel
    ```
 
 2. Add the following to `~/.claude/settings.json`:
