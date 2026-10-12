@@ -1,4 +1,4 @@
-# panel
+# Claude Code Panel
 
 A right-docked live panel for [Claude Code](https://claude.com/claude-code), built as a mod (function-hook plugin). It has four tabs:
 
