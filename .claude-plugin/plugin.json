@@ -1,6 +1,7 @@
 {
   "name": "panel",
   "version": "0.2.0",
+  "license": "MIT",
   "description": "Right-docked panel for Claude Code: session meters, Ditto mascot, Code, System and Sessions tabs",
   "author": { "name": "egeurcu", "url": "https://github.com/egeurcu" },
   "types": "./types/index.d.ts"

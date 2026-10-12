@@ -52,6 +52,10 @@ Claude Code writes `.claude-plugin/types/` the first time it loads the mod. Afte
 
 Ditto is a Pokémon character owned by Nintendo / Game Freak. The sprite here is fan art for personal use, so replace it before making this repository public.
 
+## License
+
+MIT, see [LICENSE](LICENSE). The license covers the code only; the Ditto sprite is excluded.
+
 ---
 
 ## Türkçe
