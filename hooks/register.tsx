@@ -497,7 +497,8 @@ export const register: Register = on => {
     const openTab = async (s: SessionRow) => {
       try {
         const r = await $.process.run(
-          ['wt.exe', '-w', '0', 'nt', '-d', s.project, 'pwsh', '-NoExit', '-Command', 'claude', '--resume', s.id],
+          // wt.exe 0 baytlık bir uygulama kısayolu (App Execution Alias): motor doğrudan başlatamıyor, pwsh çözüyor
+          ['pwsh', '-NoProfile', '-Command', `& wt.exe -w 0 nt -d '${s.project.replace(/'/g, "''")}' pwsh -NoExit -Command claude --resume ${s.id}`],
           { timeoutMs: 15_000 },
         )
         $.ui.toast(r.exitCode === 0 ? t.opened(base(s.project)) : t.openFailed(oneLine(r.stderr || String(r.exitCode), 120)))

@@ -159,7 +159,7 @@ test('sessions: gruplu liste, yeni PowerShell sekmesi, onaylı silme', async ($,
   expect(await pane.find({ text: 'luwi' })).toBeDefined()
   expect(await pane.find({ text: /açık/ })).toBeDefined()
   await pane.press({ key: 's-A' })
-  expect(argv).toEqual([['wt.exe', '-w', '0', 'nt', '-d', 'C:\\x\\luwi', 'pwsh', '-NoExit', '-Command', 'claude', '--resume', 'A']])
+  expect(argv).toEqual([['pwsh', '-NoProfile', '-Command', "& wt.exe -w 0 nt -d 'C:\\x\\luwi' pwsh -NoExit -Command claude --resume A"]])
   // proje başlığı aç/kapa
   await pane.press({ key: 'p-C:\\x\\luwi' })
   expect(await pane.find({ key: 's-A' })).toBeUndefined()
