@@ -30,6 +30,16 @@ Answer `y` to add the marketplace, then pick the user scope. The panel opens on 
 
 The right-docked layout needs the fullscreen TUI, so set `"tui": "fullscreen"` in `~/.claude/settings.json` (or run `/tui fullscreen`).
 
+## Update
+
+An installed plugin runs the copy fetched at install time, so `/reload-plugins` alone does not pick up new commits. To update:
+
+```
+claude plugin update panel@claude-code-panel
+```
+
+Then run `/reload-plugins` in an open session, or start a new one.
+
 ## Develop
 
 Clone the repository, then load it from the folder instead of installing it:
@@ -62,4 +72,8 @@ MIT, see [LICENSE](LICENSE). The license covers the code only; the Ditto sprite 
 
 Claude Code için sağa yerleşen canlı bir panel. **Panel**, **Code**, **System** ve **Sessions** sekmelerinden oluşur ve `/panel` ile açılıp kapanır. Arayüz dili System sekmesinin en altından değiştirilir.
 
-Kurulum: Claude Code'da `/plugin install panel --marketplace egeurcu/claude-code-panel` yaz, `y` ile marketplace'i ekle, user kapsamını seç. Sessions sekmesinde `×` ile ya da `🧹 Başlıksızları sil` ile silinen oturumlar Geri Dönüşüm Kutusu'na taşınır ve oradan geri alınabilir.
+Kurulum: Claude Code'da `/plugin install panel --marketplace egeurcu/claude-code-panel` yaz, `y` ile marketplace'i ekle, user kapsamını seç.
+
+Güncelleme: `/reload-plugins` tek başına yeni commit'leri getirmez. Önce `claude plugin update panel@claude-code-panel`, sonra `/reload-plugins`.
+
+Sessions sekmesinde `×` ile ya da `🧹 Başlıksızları sil` ile silinen oturumlar Geri Dönüşüm Kutusu'na taşınır ve oradan geri alınabilir.
