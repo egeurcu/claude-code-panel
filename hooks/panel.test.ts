@@ -127,7 +127,7 @@ test('arka plan shell: sonuçla eklenir, bildirimle biter', async ($, on) => {
 
 test('sessions: gruplu liste, yeni PowerShell sekmesi, onaylı silme', async ($, on) => {
   const line = (o: object) => JSON.stringify(o)
-  on('env.get', () => ({ value: 'C:/u' }) as any)
+  on('env.get', (_$, e: any) => ({ value: e.name === 'WT_PROFILE_ID' ? '{574e775e-4f2a-5b96-ac1e-a2962a402336}' : 'C:/u' }) as any)
   on('clock.now', () => ({ value: 10 * 3_600_000 }) as any)
   on('session.id', () => ({ value: 'CUR' }) as any)
   on('fs.exists', () => ({ value: true }) as any)
@@ -159,7 +159,7 @@ test('sessions: gruplu liste, yeni PowerShell sekmesi, onaylı silme', async ($,
   expect(await pane.find({ text: 'luwi' })).toBeDefined()
   expect(await pane.find({ text: /açık/ })).toBeDefined()
   await pane.press({ key: 's-A' })
-  expect(argv).toEqual([['pwsh', '-NoProfile', '-Command', "& wt.exe -w 0 nt -d 'C:\\x\\luwi' pwsh -NoExit -Command claude --resume A"]])
+  expect(argv).toEqual([['pwsh', '-NoProfile', '-Command', "& wt.exe -w 0 nt -p '{574e775e-4f2a-5b96-ac1e-a2962a402336}' -d 'C:\\x\\luwi' pwsh -NoExit -Command claude --resume A"]])
   // proje başlığı aç/kapa
   await pane.press({ key: 'p-C:\\x\\luwi' })
   expect(await pane.find({ key: 's-A' })).toBeUndefined()
